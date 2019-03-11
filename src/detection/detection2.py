@@ -13,10 +13,21 @@ class Deteccion():
         self.dy = 150
 
     def load_im(self, path_im):
+        """Lee la imagen de entrada
+
+        Parámetros de entrada:
+        path_im -- Path de la imagen de entrada
+        """
         im = cv2.imread(path_im)
         return im
 
     def show(self, im, bbox):
+        """Muestra la ROI de donde se encuentra la grieta
+
+        Parámetros de entrada:
+        im -- Imagen de entrada
+        bbox -- Coordenadas de la ROI
+        """
         cv2.putText(im, "HAY GRIETA", (350, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.6,
                         (0, 0, 255), 2, cv2.LINE_AA)
         cv2.rectangle(
@@ -28,23 +39,27 @@ class Deteccion():
         cv2.waitKey()
 
     def preprocess(self, path_im):
+        """ Preprocesa la imagen para poder aplicar algoritmos sobre ella.
+
+        Preprocesado de la imagen donde se recortan los bordes y se devuelve
+        la imagen recortada y una máscara de ella con los bordes dilatados.
+
+        Parámetros de entrada:
+        path_im -- Path de la imagen de entrada
+
+        Parámetros de salida:
+        img_crop -- Imagen recortada
+        img_dilation -- Máscara con bordes dilatados
+        """
         img = self.load_im(path_im)
 
-        # Esta es la parte en la que se hace el crop de la imagen para
-        # quitar los negros (habria que meterlo en una funcion)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-        # Primero los pixeles que esten muy cerca de 0 los paso a negro,
-        # para quitarme las letras de arriba
         gray[gray > 200] = 0
 
-        # Como quedan aun algunas lineas suaves de los numeros de arriba
-        # le hago un erode, para cargarmelas
         kernel_erode = np.ones((3, 3), np.uint8)
         img_erode = cv2.erode(gray, kernel_erode, iterations=1)
 
-        # Con esta imagen que ya no le quedan letras arriba, hago un crop,
-        # con un rango de colores bastante altos para evitar el negro
         _, thresh = cv2.threshold(img_erode, 100, 150, cv2.THRESH_BINARY)
 
         contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL,
@@ -56,30 +71,26 @@ class Deteccion():
                         x+int(w*0.15):x+w-int(w*0.15)
                         ]
 
-        # Con la imagen en gris y recortada, calculo la media de los
-        # valores de los pixeles
-        # la multiplico por 0.5 y me quedo con los valores que son superiores
         gray_crop = cv2.cvtColor(img_crop, cv2.COLOR_BGR2GRAY)
         mean = np.mean(gray_crop)
         gray_crop[gray_crop > mean*0.5] = 0
 
-        # Y con esto aplico Canny
         edges = cv2.Canny(gray_crop, 50, 100)
         kernel = np.ones((2, 2), np.uint8)
 
-        # A lo que me devuelve canny le hago un poco de dilatacion
-        # para agrandar las grietas
-        # para que sean continuas y se unan los trocitos
         img_dilation = cv2.dilate(edges, kernel, iterations=3)
-
-        # cv2.imshow('image',img_dilation)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
 
         return img_crop, img_dilation
 
     def applyHough(self, img_crop, img_dilation, path_im):
-        # Y con esta imagen, aplico Hough
+        """ Aplica Hough sobre una imagen dada.
+
+        Parámetros de entrada:
+        img_crop -- Imagen recortada
+        img_dilation -- Máscara con bordes dilatados
+        path_im -- Path de entrada de la imagen
+        """
+
         minLineLength = 200
         maxLineGap = 100
         lines = cv2.HoughLinesP(img_dilation, 1, np.pi/180, 100, minLineLength,
