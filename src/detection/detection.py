@@ -4,115 +4,32 @@ import numpy as np
 import glob
 import os
 
+from src.detection.preprocess import Preprocess
 
 class Deteccion():
-    def __init__(self):
-        self.x = 387
-        self.dx = 30
-        self.y = 110
-        self.dy = 150
+    def __init__(self, path_out):
+        self.path_out = path_out
+        self.preprocess = Preprocess()
 
     def load_im(self, path_im):
-        """Lee la imagen de entrada
+        """
+        Lee la imagen de entrada
 
-        Parámetros de entrada:
-        path_im -- Path de la imagen de entrada
+        :param path_im: path de la imagen de entrada
+        :return: imagen
         """
         im = cv2.imread(path_im)
         return im
 
-    def show(self, im, bbox):
-        """Muestra la ROI de donde se encuentra la grieta
-
-        Parámetros de entrada:
-        im -- Imagen de entrada
-        bbox -- Coordenadas de la ROI
-        """
-        cv2.putText(im, "HAY GRIETA", (350, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.6,
-                        (0, 0, 255), 2, cv2.LINE_AA)
-        cv2.rectangle(
-                        im, (bbox[0], bbox[2]),
-                        (bbox[0] + bbox[1], bbox[2] + bbox[3]),
-                        (0, 255, 0), 2
-                        )
-        cv2.imshow('Deteccion', im)
-        cv2.waitKey()
-
-    def removeBlackBackground(self, gray_crop):
-        for i in range(gray_crop.shape[1]):
-            for j in range(gray_crop.shape[0]):
-                if(gray_crop[j][i] < 90):
-                    gray_crop[j][i] = 183
-                else:
-                    gray_crop[j][i] = 183
-                    break
-                
-        for i in range(gray_crop.shape[1]):
-            for j in range(gray_crop.shape[0]):
-                if(gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]- i - 1] < 90):
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = 183
-                else:
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]  - i - 1] = 183
-                    break
-                
-        return gray_crop
-    
-    def preprocess(self, path_im):
-        """ Preprocesa la imagen para poder aplicar algoritmos sobre ella.
-
-        Preprocesado de la imagen donde se recortan los bordes y se devuelve
-        la imagen recortada y una máscara de ella con los bordes dilatados.
-
-        Parámetros de entrada:
-        path_im -- Path de la imagen de entrada
-
-        Parámetros de salida:
-        img_crop -- Imagen recortada
-        img_dilation -- Máscara con bordes dilatados
-        """
-        img = self.load_im(path_im)
-
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-        gray[gray > 200] = 0
-
-        kernel_erode = np.ones((3, 3), np.uint8)
-        img_erode = cv2.erode(gray, kernel_erode, iterations=1)
-
-        _, thresh = cv2.threshold(img_erode, 100, 150, cv2.THRESH_BINARY)
-
-        contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL,
-                                    cv2.CHAIN_APPROX_SIMPLE)
-        cnt = contours[0]
-        x, y, w, h = cv2.boundingRect(cnt)
-        img_crop = img[
-                        y+int(h*0.15):y+h-int(h*0.15),
-                        x+int(w*0.15):x+w-int(w*0.15)
-                        ]
-
-        gray_crop = cv2.cvtColor(img_crop, cv2.COLOR_BGR2GRAY)
-        
-        gray_crop = self.removeBlackBackground(gray_crop)
-        
-        mean = np.mean(gray_crop)
-        gray_crop[gray_crop > mean*0.5] = 0
-
-        edges = cv2.Canny(gray_crop, 50, 100)
-        kernel = np.ones((2, 2), np.uint8)
-
-        img_dilation = cv2.dilate(edges, kernel, iterations=3)
-
-        return img_crop, img_dilation
-
     def applyHough(self, img_crop, img_dilation, path_im):
-        """ Aplica Hough sobre una imagen dada.
-
-        Parámetros de entrada:
-        img_crop -- Imagen recortada
-        img_dilation -- Máscara con bordes dilatados
-        path_im -- Path de entrada de la imagen
         """
+        Aplica Hough sobre una imagen dada
 
+        :param img_crop: imagen recortada
+        :param img_dilation: máscara con bordes dilatados
+        :param path_im: path de entrada de la imagen
+        :return:
+        """
         minLineLength = 200
         maxLineGap = 100
         lines = cv2.HoughLinesP(img_dilation, 1, np.pi/180, 100, minLineLength,
@@ -122,18 +39,36 @@ class Deteccion():
                 for x1, y1, x2, y2 in line:
                     cv2.line(img_crop, (x1, y1), (x2, y2), (0, 0, 255), 4)
             file = path_im.split('/')[-1].split('\\')[-1]
-            cv2.imwrite('out/' + file + '_split.jpg', img_crop)
+            cv2.imwrite(os.path.join(self.path_out, file + '_split.jpg'), img_crop)
+    
+    def process(self, path_im):
+        """
+        Proceso principal
+
+        :param path_im: path de la imagen a procesar
+        """
+        img = self.load_im(path_im)
+        img_gray = self.preprocess.convert_image_to_gray(img)
+        img_gray[img_gray > 200] = 0
+        image_erode = self.preprocess.morphology('erode', img_gray)
+        contours = self.preprocess.get_contours(image_erode)
+        img_crop = self.preprocess.crop_image(img, contours)
+        gray_crop = self.preprocess.convert_image_to_gray(img_crop)
+        gray_crop = self.preprocess.removeBlackBackground(gray_crop)
+        edges = self.preprocess.canny_filter(gray_crop)
+        img_dilated = self.preprocess.morphology('dilate', edges, kernel_size=2, iterations=3)
+        self.applyHough(img_crop, img_dilated, path_im)
+
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Main parser')
-    mkdir_folder = 'out'
-    if not os.path.exists(mkdir_folder):
-        os.makedirs(mkdir_folder)
-    for filename in glob.glob(
-                                'D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/' +
-                                'Trabajo/wood/original/*'):
+    ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original/')
+    ap.add_argument('--path_out', default= './out')
+    FLAGS = ap.parse_args()
 
-        deteccion = Deteccion()
+    if not os.path.exists(FLAGS.path_out):
+        os.makedirs(FLAGS.path_out)
 
-        img_crop, img_dilation = deteccion.preprocess(filename)
-        deteccion.applyHough(img_crop, img_dilation, filename)
+    for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
+        deteccion = Deteccion(FLAGS.path_out)
+        deteccion.process(filename)

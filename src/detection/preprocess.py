@@ -1,23 +1,20 @@
 import cv2
 import numpy as np
 
-
 class Preprocess():
     """
     Preprocesa la imagen para poder aplicar algoritmos sobre ella.
-    Preprocesado de la imagen donde se recortan los bordes y se devuelve
-    la imagen recortada y una máscara de ella con los bordes dilatados.
-
+    Se recortan los bordes y se devuelve la imagen recortada y una máscara de ella con los bordes dilatados.
     """
     def __init__(self):
         pass
 
     def removeBlackBackground(self, gray_crop):
         """
-        Eliminar las franjas superiror e inferior de la imagen.
+        Eliminación de las franjas superiror e inferior de la imagen.
 
-        :param gray_crop:
-        :return:
+        :param gray_crop: imagen cortada
+        :return: imagen cortada
         """
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
@@ -39,9 +36,10 @@ class Preprocess():
 
     def canny_filter(self, img):
         """
+        Filtrado de canny para búsqueda de bordes
 
-        :param img:
-        :return:
+        :param img: imagen
+        :return: imagen de bordes
         """
         mean = np.mean(img)
         img[img > mean*0.5] = 0
@@ -49,12 +47,13 @@ class Preprocess():
 
     def crop_image(self, img, contours):
         """
+        Recorte de la imagen
 
-        :param img:
-        :param contours:
-        :return:
+        :param img: imagen
+        :param contours: contornos
+        :return: imagen cortada
         """
-        cnt = contours[0][0]
+        cnt = contours[0]
         x, y, w, h = cv2.boundingRect(cnt)
         return img[
                     y+int(h*0.15):y+h-int(h*0.15),
@@ -63,9 +62,10 @@ class Preprocess():
 
     def get_contours(self, img):
         """
+        Obtención de contornos
 
-        :param img:
-        :return:
+        :param img: imagen
+        :return: lista de contornos
         """
         _, thresh = cv2.threshold(img, 100, 150, cv2.THRESH_BINARY)
         return cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -75,11 +75,8 @@ class Preprocess():
         Método para convertir la imagen a escala de grises
 
         :param img: imagen de entrada en BGR
-        :type img: nd.array
         :param th: threshold
-        :type th: int
         :return: imagen en escala de grises
-        :rtype: nd.array
         """
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         return img_gray
@@ -90,10 +87,8 @@ class Preprocess():
         Operación morfológica de erosión
 
         :param img_gray: imagen en escala de grises
-        :type img_gray: nd.array (:,:,1)
         :param kernel_size: tamaño del elemento estructurante
-        :type kernel_size: int
-        :return: eroded image
+        :return: imagen erosionada/dilatada
         """
         kernel = np.ones((kernel_size, kernel_size), np.uint8)
         if type_m == 'erode':

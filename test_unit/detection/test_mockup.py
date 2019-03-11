@@ -4,7 +4,7 @@ import numpy as np
 from unittest import TestCase
 from src.detection.mockup import Deteccion_Mockup
 
-class Test_Deteccion(TestCase):
+class Test_Deteccion_Mockup(TestCase):
     def setUp(self):
         self.deteccion = Deteccion_Mockup()
         self.path_im = os.path.join(os.pardir, 'data/st1456')
