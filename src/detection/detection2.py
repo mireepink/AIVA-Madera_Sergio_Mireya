@@ -38,6 +38,25 @@ class Deteccion():
         cv2.imshow('Deteccion', im)
         cv2.waitKey()
 
+    def removeBlackBackground(self, gray_crop):
+        for i in range(gray_crop.shape[1]):
+            for j in range(gray_crop.shape[0]):
+                if(gray_crop[j][i] < 90):
+                    gray_crop[j][i] = 183
+                else:
+                    gray_crop[j][i] = 183
+                    break
+                
+        for i in range(gray_crop.shape[1]):
+            for j in range(gray_crop.shape[0]):
+                if(gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]- i - 1] < 90):
+                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = 183
+                else:
+                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]  - i - 1] = 183
+                    break
+                
+        return gray_crop
+    
     def preprocess(self, path_im):
         """ Preprocesa la imagen para poder aplicar algoritmos sobre ella.
 
@@ -72,6 +91,9 @@ class Deteccion():
                         ]
 
         gray_crop = cv2.cvtColor(img_crop, cv2.COLOR_BGR2GRAY)
+        
+        gray_crop = self.removeBlackBackground(gray_crop)
+        
         mean = np.mean(gray_crop)
         gray_crop[gray_crop > mean*0.5] = 0
 
