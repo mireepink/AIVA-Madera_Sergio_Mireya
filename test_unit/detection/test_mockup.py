@@ -2,11 +2,11 @@ import os
 import numpy as np
 
 from unittest import TestCase
-from src.detection.detection import Deteccion
+from src.detection.mockup import Deteccion_Mockup
 
-class Test_Deteccion(TestCase):
+class Test_Deteccion_Mockup(TestCase):
     def setUp(self):
-        self.deteccion = Deteccion()
+        self.deteccion = Deteccion_Mockup()
         self.path_im = os.path.join(os.pardir, 'data/st1456')
         self.sum_im_expected = 104339933
         self.im_shape_expected = (512, 488, 3)
