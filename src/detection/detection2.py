@@ -39,20 +39,21 @@ class Deteccion():
         cv2.waitKey()
 
     def removeBlackBackground(self, gray_crop):
+        meanColor = np.mean(gray_crop)
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
                 if(gray_crop[j][i] < 90):
-                    gray_crop[j][i] = 183
+                    gray_crop[j][i] = meanColor
                 else:
-                    gray_crop[j][i] = 183
+                    gray_crop[j][i] = meanColor
                     break
                 
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
                 if(gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]- i - 1] < 90):
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = 183
+                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = meanColor
                 else:
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]  - i - 1] = 183
+                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1]  - i - 1] = meanColor
                     break
                 
         return gray_crop
