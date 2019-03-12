@@ -1,10 +1,12 @@
 import cv2
 import numpy as np
 
+
 class Preprocess():
     """
     Preprocesa la imagen para poder aplicar algoritmos sobre ella.
-    Se recortan los bordes y se devuelve la imagen recortada y una máscara de ella con los bordes dilatados.
+    Se recortan los bordes y se devuelve la imagen recortada
+    y una máscara de ella con los bordes dilatados.
     """
     def __init__(self):
         pass
@@ -16,20 +18,23 @@ class Preprocess():
         :param gray_crop: imagen cortada
         :return: imagen cortada
         """
+        meanColor = np.mean(gray_crop)
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
-                if (gray_crop[j][i] < 90):
-                    gray_crop[j][i] = 183
+                if(gray_crop[j][i] < 90):
+                    gray_crop[j][i] = meanColor
                 else:
-                    gray_crop[j][i] = 183
+                    gray_crop[j][i] = meanColor
                     break
 
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
-                if (gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] < 90):
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = 183
+                row_index = gray_crop.shape[0] - j - 1
+                col_index = gray_crop.shape[1] - i - 1
+                if(gray_crop[row_index][col_index] < 90):
+                    gray_crop[row_index][col_index] = meanColor
                 else:
-                    gray_crop[gray_crop.shape[0] - j - 1][gray_crop.shape[1] - i - 1] = 183
+                    gray_crop[row_index][col_index] = meanColor
                     break
 
         return gray_crop
@@ -68,7 +73,10 @@ class Preprocess():
         :return: lista de contornos
         """
         _, thresh = cv2.threshold(img, 100, 150, cv2.THRESH_BINARY)
-        return cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        return cv2.findContours(
+                                thresh,
+                                cv2.RETR_EXTERNAL,
+                                cv2.CHAIN_APPROX_SIMPLE)
 
     def convert_image_to_gray(self, img):
         """
@@ -81,8 +89,7 @@ class Preprocess():
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         return img_gray
 
-
-    def morphology(self, type_m, img_gray, kernel_size = 3, iterations = 1):
+    def morphology(self, type_m, img_gray, kernel_size=3, iterations=1):
         """
         Operación morfológica de erosión
 

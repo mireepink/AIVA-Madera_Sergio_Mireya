@@ -4,7 +4,9 @@ import numpy as np
 import glob
 import os
 
-from src.detection.preprocess import Preprocess
+from preprocess import Preprocess
+# from src.detection.preprocess import Preprocess
+
 
 class Deteccion():
     def __init__(self, path_out):
@@ -39,8 +41,10 @@ class Deteccion():
                 for x1, y1, x2, y2 in line:
                     cv2.line(img_crop, (x1, y1), (x2, y2), (0, 0, 255), 4)
             file = path_im.split('/')[-1].split('\\')[-1]
-            cv2.imwrite(os.path.join(self.path_out, file + '_split.jpg'), img_crop)
-    
+            cv2.imwrite(
+                        os.path.join(self.path_out, file + '_split.jpg'),
+                        img_crop)
+
     def process(self, path_im):
         """
         Proceso principal
@@ -56,14 +60,19 @@ class Deteccion():
         gray_crop = self.preprocess.convert_image_to_gray(img_crop)
         gray_crop = self.preprocess.removeBlackBackground(gray_crop)
         edges = self.preprocess.canny_filter(gray_crop)
-        img_dilated = self.preprocess.morphology('dilate', edges, kernel_size=2, iterations=3)
+        img_dilated = self.preprocess.morphology(
+                                                'dilate',
+                                                edges,
+                                                kernel_size=2,
+                                                iterations=3)
         self.applyHough(img_crop, img_dilated, path_im)
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Main parser')
-    ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original/')
-    ap.add_argument('--path_out', default= './out')
+    ap.add_argument('--path_im',
+                    default='D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/Trabajo/wood/original')
+    ap.add_argument('--path_out', default='./out')
     FLAGS = ap.parse_args()
 
     if not os.path.exists(FLAGS.path_out):
