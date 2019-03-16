@@ -4,8 +4,8 @@ import numpy as np
 import glob
 import os
 
-from preprocess import Preprocess
-# from src.detection.preprocess import Preprocess
+# from preprocess import Preprocess
+from src.detection.preprocess import Preprocess
 
 
 class Deteccion():
@@ -57,28 +57,28 @@ class Deteccion():
                       imagen origina al realizar el crop  
         :return initImage: Imagen inicial con las grietas marcadas
         """
-        if(colorImage != None):
+        if type(colorImage) is np.ndarray:
             img_hsv = cv2.cvtColor(colorImage, cv2.COLOR_BGR2HSV)
             lower_red = np.array([0,0,0])
             upper_red = np.array([10,255,255])
-    
+
             mask = cv2.inRange(img_hsv, lower_red, upper_red)
             res = cv2.bitwise_and(colorImage,colorImage, mask= mask)
- 
+
             res = cv2.cvtColor(res, cv2.COLOR_BGR2GRAY)
-            
+
             (thresh, im_bw) = cv2.threshold(res, 150, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
-            
+
             kernel = np.ones((3,3), np.uint8)
             res = cv2.erode(res, kernel, iterations=1)
             res = cv2.dilate(res, kernel, iterations=3)
-            
-            
+
+
             gauss = cv2.GaussianBlur(res, (5,5), 0)
-            
-            t, dst = cv2.threshold(gauss, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_TRIANGLE) 
+
+            t, dst = cv2.threshold(gauss, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_TRIANGLE)
             _, contours, _ = cv2.findContours(dst, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-            
+
             for c in contours:
                 area = cv2.contourArea(c)
                 if area > 1000 and area < 10000:
@@ -95,7 +95,7 @@ class Deteccion():
         :param image: Imagen resultado que hay que guardar
         :path_im: Directorio donde guardar la imagen
         """
-        if(image != None):
+        if type(image) is np.ndarray:
             file = path_im.split('/')[-1].split('\\')[-1]
             cv2.imwrite(
                         os.path.join(self.path_out, file + '_split.jpg'),
@@ -130,16 +130,15 @@ class Deteccion():
          
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Main parser')
-    ap.add_argument('--path_im',
-                    default='D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/Trabajo/wood/original')
-    ap.add_argument('--path_out', default='./out')
+    ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original')
+    ap.add_argument('--path_out', default='out')
     FLAGS = ap.parse_args()
-    FLAG = "out"
-    if not os.path.exists(FLAG):#(FLAGS.path_out):
-        os.makedirs(FLAG)#(FLAGS.path_out)
+
+    if not os.path.exists(FLAGS.path_out):
+        os.makedirs(FLAGS.path_out)
 
     for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
-        deteccion = Deteccion(FLAG)#FLAGS.path_out)
+        deteccion = Deteccion(FLAGS.path_out)
         deteccion.process(filename)
 
 
