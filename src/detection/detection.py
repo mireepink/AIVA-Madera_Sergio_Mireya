@@ -57,7 +57,8 @@ class Deteccion():
                       imagen origina al realizar el crop  
         :return initImage: Imagen inicial con las grietas marcadas
         """
-        if(colorImage != None):
+        #print(colorImage)
+        if type(colorImage) is np.ndarray: 
             img_hsv = cv2.cvtColor(colorImage, cv2.COLOR_BGR2HSV)
             lower_red = np.array([0,0,0])
             upper_red = np.array([10,255,255])
@@ -95,7 +96,7 @@ class Deteccion():
         :param image: Imagen resultado que hay que guardar
         :path_im: Directorio donde guardar la imagen
         """
-        if(image != None):
+        if type(image) is np.ndarray:
             file = path_im.split('/')[-1].split('\\')[-1]
             cv2.imwrite(
                         os.path.join(self.path_out, file + '_split.jpg'),
@@ -134,12 +135,11 @@ if __name__ == '__main__':
                     default='D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/Trabajo/wood/original')
     ap.add_argument('--path_out', default='./out')
     FLAGS = ap.parse_args()
-    FLAG = "out"
-    if not os.path.exists(FLAG):#(FLAGS.path_out):
-        os.makedirs(FLAG)#(FLAGS.path_out)
+    if not os.path.exists(FLAGS.path_out):
+        os.makedirs(FLAGS.path_out)
 
-    for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
-        deteccion = Deteccion(FLAG)#FLAGS.path_out)
+    for filename in glob.glob(FLAGS.path_im, '*'):
+        deteccion = Deteccion(FLAGS.path_out)
         deteccion.process(filename)
 
 
