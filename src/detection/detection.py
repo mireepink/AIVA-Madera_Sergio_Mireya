@@ -129,16 +129,16 @@ class Deteccion():
          
          
 if __name__ == '__main__':
-    #ap = argparse.ArgumentParser(description='Main parser')
-    #ap.add_argument('--path_im',
-    #                default='D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/Trabajo/wood/original')
-    #ap.add_argument('--path_out', default='./out')
-    #FLAGS = ap.parse_args()
+    ap = argparse.ArgumentParser(description='Main parser')
+    ap.add_argument('--path_im',
+                    default='D:/Google Drive/MOVA/2_Cuatri/Aplicaciones/Trabajo/wood/original')
+    ap.add_argument('--path_out', default='./out')
+    FLAGS = ap.parse_args()
     FLAG = "out"
     if not os.path.exists(FLAG):#(FLAGS.path_out):
         os.makedirs(FLAG)#(FLAGS.path_out)
 
-    for filename in glob.glob(os.path.join('E:\MOVA\AI\wood\original\*')):#FLAGS.path_im, '*')):
+    for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
         deteccion = Deteccion(FLAG)#FLAGS.path_out)
         deteccion.process(filename)
 
