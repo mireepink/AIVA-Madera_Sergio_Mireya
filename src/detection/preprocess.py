@@ -18,10 +18,12 @@ class Preprocess():
         :param gray_crop: imagen cortada
         :return: imagen cortada
         """
+        thresholdBlack = 90
+        
         meanColor = np.mean(gray_crop)
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
-                if(gray_crop[j][i] < 90):
+                if(gray_crop[j][i] < thresholdBlack):
                     gray_crop[j][i] = meanColor
                 else:
                     gray_crop[j][i] = meanColor
@@ -31,7 +33,7 @@ class Preprocess():
             for j in range(gray_crop.shape[0]):
                 row_index = gray_crop.shape[0] - j - 1
                 col_index = gray_crop.shape[1] - i - 1
-                if(gray_crop[row_index][col_index] < 90):
+                if(gray_crop[row_index][col_index] < thresholdBlack):
                     gray_crop[row_index][col_index] = meanColor
                 else:
                     gray_crop[row_index][col_index] = meanColor
@@ -58,12 +60,17 @@ class Preprocess():
         :param contours: contornos
         :return: imagen cortada
         """
+        
+        percentageToCrop = 0.15
+        
         cnt = contours[0]
         x, y, w, h = cv2.boundingRect(cnt)
+        yCrop = y+int(h*percentageToCrop)
+        xCrop = x+int(w*percentageToCrop)
         return img[
-                    y+int(h*0.15):y+h-int(h*0.15),
-                    x+int(w*0.15):x+w-int(w*0.15)
-                    ]
+                    y+int(h*percentageToCrop):y+h-int(h*percentageToCrop),
+                    x+int(w*percentageToCrop):x+w-int(w*percentageToCrop)
+                    ],xCrop, yCrop
 
     def get_contours(self, img):
         """
