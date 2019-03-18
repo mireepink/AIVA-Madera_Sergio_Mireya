@@ -5,14 +5,23 @@ import numpy as np
 from unittest import TestCase
 from src.detection.preprocess import Preprocess
 
+
 class TestPreprocess(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.thresholdGray = 200
 
-        self.path_im = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456')
-        self.path_im_gray = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray.png')
-        self.path_im_gray_erode = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray_erode.png')
-        self.path_im_gray_dilate = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray_dilate.png')
+        self.path_im = os.path.join(
+            os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456'
+            )
+        self.path_im_gray = os.path.join(
+            os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray.png'
+            )
+        self.path_im_gray_erode = os.path.join(
+            os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray_erode.png'
+            )
+        self.path_im_gray_dilate = os.path.join(
+            os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456_gray_dilate.png'
+            )
         self.rect = (0, 116, 488, 396)
         self.shape_image_cropped = (278, 342, 3)
         self.n_edges = 1042
@@ -48,9 +57,9 @@ class TestPreprocess(TestCase):
 
     def test_canny_filter(self):
         img_gray_erode = cv2.imread(self.path_im_gray_erode, 0)
-        edges = self.preprocess.canny_filter(img_gray_erode, th_mean = 0.5, th_1 = 50, th_2 = 100)
+        edges = self.preprocess.canny_filter(img_gray_erode, th_mean=0.5, th_1=50, th_2=100)
         self.assertEqual(edges[edges == 255].size, self.n_edges)
-        edges = self.preprocess.canny_filter(img_gray_erode, th_mean = 0.4, th_1 = 55, th_2 = 102)
+        edges = self.preprocess.canny_filter(img_gray_erode, th_mean=0.4, th_1=55, th_2=102)
         self.assertNotEqual(edges[edges == 255].size, self.n_edges)
 
     def test_remove_black_background(self):

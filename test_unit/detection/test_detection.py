@@ -5,8 +5,9 @@ import numpy as np
 from unittest import TestCase
 from src.detection.detection import Detection
 
+
 class TestDetection(TestCase):
-    def setUp(self):
+    def set_up(self):
         self.path_out = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data')
         self.path_im1 = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1526')
         self.path_im2 = os.path.join(os.pardir, 'AIVA-Madera_Sergio_Mireya/test_unit/data/st1456')
