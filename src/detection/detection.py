@@ -6,6 +6,7 @@ import os
 
 from src.detection.preprocess import Preprocess
 
+
 class Detection:
     def __init__(self, path_out):
         self.path_out = path_out
@@ -146,7 +147,7 @@ class Detection:
         self._save_image(image_with_roi, path_im)
 
 
-if __name__ == '__main__': # pragma: no cover
+if __name__ == '__main__':  # pragma: no cover
     ap = argparse.ArgumentParser(description='Main parser')
     ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original')
     ap.add_argument('--path_out', default='out')
