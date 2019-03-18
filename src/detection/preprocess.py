@@ -12,11 +12,12 @@ class Preprocess():
     def __init__(self):
         pass
 
-    def remove_black_background(self, gray_crop, threshold_black = 90):
+    def remove_black_background(self, gray_crop, threshold_black=90):
         """
         Eliminacion de las franjas superiror e inferior de la imagen.
 
         :param gray_crop: imagen cortada
+        :param threshold_black: Umbral para el valor de 'negro' en los pixeles
         :return: imagen cortada
         """
         mean_color = np.mean(gray_crop)
@@ -36,11 +37,14 @@ class Preprocess():
 
         return gray_crop
 
-    def canny_filter(self, img, th_mean = 0.5, th_1 = 50, th_2 = 100):
+    def canny_filter(self, img, th_mean=0.5, th_1=50, th_2=100):
         """
         Filtrado de canny para busqueda de bordes
 
         :param img: imagen
+        :param th_mean: umbral para el valor de la media de los pixeles
+        :param th_1: umbral inferior de Canny
+        :param th_2: umbral superior de Canny
         :return: imagen de bordes
         """
         mean = np.mean(img)
@@ -53,7 +57,8 @@ class Preprocess():
         obtenidos anteriormente en la funcion get_contours
 
         :param img: imagen
-        :param contours: contornos
+        :param rect: coordenadas del rectangulo a recortar
+        :param percentage_to_crop porcentaje extra a cortar
         :return: imagen cortada
         """
         x, y, w, h = rect
@@ -64,11 +69,13 @@ class Preprocess():
                x + int(w * percentage_to_crop):x + w - int(w * percentage_to_crop)
                ], x_crop, y_crop
 
-    def get_contours(self, img, threshold = 100, max_value = 150):
+    def get_contours(self, img, threshold=100, max_value=150):
         """
         Obtencion de contornos
 
         :param img: imagen
+        :param threshold: valor del umbral
+        :param max_value: valor maximo del umbral
         :return: lista de contornos
         """
         _, thresh = cv2.threshold(img, threshold, max_value, cv2.THRESH_BINARY)
