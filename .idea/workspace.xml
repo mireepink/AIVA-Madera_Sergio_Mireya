@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a914c40c-c839-4919-a660-a4708bbc94b0" name="Default Changelist" comment="#2 Upldate bug">
-      <change beforePath="$PROJECT_DIR$/.idea/AIVA-Madera_Sergio_Mireya.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIVA-Madera_Sergio_Mireya.iml" afterDir="false" />
+    <list default="true" id="a914c40c-c839-4919-a660-a4708bbc94b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +39,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/detection/preprocess.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="29">
-                    <caret line="53" selection-start-line="53" selection-end-line="53" />
+                  <state relative-caret-position="89">
+                    <caret line="57" selection-start-line="57" selection-end-line="57" />
                     <folding>
                       <element signature="e#0#10#0" expanded="true" />
                     </folding>
@@ -61,7 +58,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
+            <state relative-caret-position="65">
               <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -80,10 +77,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="150" column="83" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="83" />
+            <state relative-caret-position="330">
+              <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -95,8 +101,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="209">
-                <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="39" />
+              <first_editor relative-caret-position="15">
+                <caret line="1" selection-start-line="1" selection-end-line="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -140,7 +146,6 @@
       <list>
         <option value="$PROJECT_DIR$/test_unit/detection/test_unirect.py" />
         <option value="$PROJECT_DIR$/test_unit/detection/unirect.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/detection/detection2.py" />
         <option value="$PROJECT_DIR$/src/detection/__init__.py" />
         <option value="$PROJECT_DIR$/src/detection/preprocess.py" />
@@ -150,6 +155,7 @@
         <option value="$PROJECT_DIR$/src/detection/mockup.py" />
         <option value="$PROJECT_DIR$/test_unit/detection/test_preprocess.py" />
         <option value="$PROJECT_DIR$/src/detection/detection.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -317,7 +323,7 @@
       <workItem from="1551983877574" duration="3540000" />
       <workItem from="1552750499941" duration="4738000" />
       <workItem from="1552930217281" duration="158000" />
-      <workItem from="1552930410263" duration="11783000" />
+      <workItem from="1552930410263" duration="12394000" />
     </task>
     <task id="LOCAL-00001" summary="#2 Upload mock-up">
       <created>1550102410905</created>
@@ -361,7 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1552945755413</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="#2 Upldate readme.md">
+      <created>1552948375512</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1552948375512</updated>
+    </task>
+    <task id="LOCAL-00008" summary="#2 Upldate gitignore">
+      <created>1552948420828</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552948420828</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -397,7 +417,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36482000" />
+    <option name="totallyTimeSpent" value="37093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -470,14 +490,16 @@
     <MESSAGE value="#2 Resolved conflicts" />
     <MESSAGE value="#2 Update unit tests" />
     <MESSAGE value="#2 Update requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="#2 Update requirements.txt" />
+    <MESSAGE value="#2 Upldate readme.md" />
+    <MESSAGE value="#2 Upldate gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2 Upldate gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/detection/detection.py</url>
-          <line>160</line>
+          <line>161</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -613,13 +635,6 @@ mask0 = cv2.inRange(im, lower_red, upper_red)</expression-string>
     <entry file="file://$PROJECT_DIR$/src/detection/out/st1406_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_unit/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -697,20 +712,47 @@ mask0 = cv2.inRange(im, lower_red, upper_red)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_unit/detection/test_preprocess.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,33 +763,13 @@ mask0 = cv2.inRange(im, lower_red, upper_red)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="150" column="83" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="83" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="209">
-            <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="39" />
+          <first_editor relative-caret-position="15">
+            <caret line="1" selection-start-line="1" selection-end-line="1" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

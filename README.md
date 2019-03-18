@@ -1,5 +1,8 @@
 # AIVA-Madera_Sergio_Mireya
-
+* Jorge Vela Peña
+* Sergio Domínguez Rodríguez
+* Mireya Elisabet Valenzuela Carballo
+ 
 ## Descripción
 Proyecto de detección de grietas en la madera. MOVA URJC.
 Este proyecto inspeccionará la madera en búsqueda de grietas de forma autónoma. La realización de este proyecto supone numerosos beneficios y ventajas para la problemática industrial de detección de grietas en superficies. En nuestro caso, el enfoque se llevará a cabo en tablas de madera. 
