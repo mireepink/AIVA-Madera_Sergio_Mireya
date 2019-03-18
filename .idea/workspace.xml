@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a914c40c-c839-4919-a660-a4708bbc94b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/detection/mockup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detection/detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/detection/detection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detection/detection2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_unit/detection/test_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_unit/detection/test_detection.py" afterDir="false" />
+    <list default="true" id="a914c40c-c839-4919-a660-a4708bbc94b0" name="Default Changelist" comment="#2 Upldate bug">
+      <change beforePath="$PROJECT_DIR$/.idea/AIVA-Madera_Sergio_Mireya.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIVA-Madera_Sergio_Mireya.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,35 +14,76 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$detection2.coverage" NAME="detection2 Coverage Results" MODIFIED="1552249479832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/detection" />
-    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$detection.coverage" NAME="detection Coverage Results" MODIFIED="1552158824261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/detection" />
-    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_unit.coverage" NAME="Unittests in test_unit Coverage Results" MODIFIED="1549742642223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_detection_TestDetection.coverage" NAME="Unittests for test_detection.TestDetection Coverage Results" MODIFIED="1552937547589" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$detection2.coverage" NAME="detection2 Coverage Results" MODIFIED="1552937125088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_Test_Preprocess_test_convert_image_to_gray.coverage" NAME="Unittests for test_preprocess.Test_Preprocess.test_convert_image_to_gray Coverage Results" MODIFIED="1552754036242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_Test_Preprocess_test.coverage" NAME="Unittests for test_preprocess.Test_Preprocess.test Coverage Results" MODIFIED="1552754566412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_TestPreprocess_test_canny_filter.coverage" NAME="Unittests for test_preprocess.TestPreprocess.test_canny_filter Coverage Results" MODIFIED="1552934920356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
     <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$unirect.coverage" NAME="unirect Coverage Results" MODIFIED="1549994838188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
-    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_unirect_py.coverage" NAME="Unittests in test_unirect.py Coverage Results" MODIFIED="1549995104299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
     <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_detection_py.coverage" NAME="Unittests in test_detection.py Coverage Results" MODIFIED="1550099560421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_Test_Preprocess_test_morpholofy.coverage" NAME="Unittests for test_preprocess.Test_Preprocess.test_morpholofy Coverage Results" MODIFIED="1552754898565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_detection_Test_Deteccion_test_load_im.coverage" NAME="Unittests for test_detection.Test_Deteccion.test_load_im Coverage Results" MODIFIED="1549743239261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_TestPreprocess_test_crop_image.coverage" NAME="Unittests for test_preprocess.TestPreprocess.test_crop_image Coverage Results" MODIFIED="1552933942193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_TestPreprocess_test_remove_black_background.coverage" NAME="Unittests for test_preprocess.TestPreprocess.test_remove_black_background Coverage Results" MODIFIED="1552936256990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$detection.coverage" NAME="detection Coverage Results" MODIFIED="1552158824261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_TestPreprocess_test_get_contours.coverage" NAME="Unittests for test_preprocess.TestPreprocess.test_get_contours Coverage Results" MODIFIED="1552933372220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_preprocess_py.coverage" NAME="Unittests in test_preprocess.py Coverage Results" MODIFIED="1552938255867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_unit.coverage" NAME="Unittests in test_unit Coverage Results" MODIFIED="1549742642223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_test_unirect_py.coverage" NAME="Unittests in test_unirect.py Coverage Results" MODIFIED="1549995104299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_preprocess_TestPreprocess.coverage" NAME="Unittests for test_preprocess.TestPreprocess Coverage Results" MODIFIED="1552936328048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
     <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_detection_Test_Deteccion.coverage" NAME="Unittests for test_detection.Test_Deteccion Coverage Results" MODIFIED="1549742811326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
     <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_in_detection.coverage" NAME="Unittests in detection Coverage Results" MODIFIED="1549744552709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
-    <SUITE FILE_PATH="coverage/AIVA_Madera_Sergio_Mireya$Unittests_for_test_detection_Test_Deteccion_test_load_im.coverage" NAME="Unittests for test_detection.Test_Deteccion.test_load_im Coverage Results" MODIFIED="1549743239261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_unit/detection" />
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/detection/preprocess.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="29">
+                    <caret line="53" selection-start-line="53" selection-end-line="53" />
+                    <folding>
+                      <element signature="e#0#10#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="59">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="150" column="83" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="83" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -56,30 +91,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_unit/detection/test_detection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="209">
+                <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="39" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/test_unit/detection/test_preprocess.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="75">
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="19" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_unit/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -91,28 +121,44 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>idea</find>
+      <find>crop_image</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="mev/2" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test_unit/detection/test_unirect.py" />
         <option value="$PROJECT_DIR$/test_unit/detection/unirect.py" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/src/detection/detection.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/detection/detection2.py" />
-        <option value="$PROJECT_DIR$/src/detection/mockup.py" />
+        <option value="$PROJECT_DIR$/src/detection/__init__.py" />
+        <option value="$PROJECT_DIR$/src/detection/preprocess.py" />
         <option value="$PROJECT_DIR$/test_unit/detection/test_detection.py" />
+        <option value="$PROJECT_DIR$/test_unit/detection/test_mockup.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/src/detection/mockup.py" />
+        <option value="$PROJECT_DIR$/test_unit/detection/test_preprocess.py" />
+        <option value="$PROJECT_DIR$/src/detection/detection.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
-    <option name="y" value="62" />
-    <option name="width" value="1400" />
-    <option name="height" value="783" />
+    <option name="x" value="1440" />
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -122,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,45 +176,24 @@
               <item name="AIVA-Madera_Sergio_Mireya" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIVA-Madera_Sergio_Mireya" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="AIVA-Madera_Sergio_Mireya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVA-Madera_Sergio_Mireya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVA-Madera_Sergio_Mireya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVA-Madera_Sergio_Mireya" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="detection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVA-Madera_Sergio_Mireya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVA-Madera_Sergio_Mireya" type="462c0819:PsiDirectoryNode" />
-              <item name="test_unit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIVA-Madera_Sergio_Mireya" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIVA-Madera_Sergio_Mireya" type="462c0819:PsiDirectoryNode" />
-              <item name="test_unit" type="462c0819:PsiDirectoryNode" />
-              <item name="detection" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/test_unit/data" />
+      <recent name="$PROJECT_DIR$/src/detection" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -182,29 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.detection2">
-    <configuration name="detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AIVA-Madera_Sergio_Mireya" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/detection" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/detection/mockup.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in test_preprocess.py">
     <configuration name="detection2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AIVA-Madera_Sergio_Mireya" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -227,29 +231,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="unirect" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AIVA-Madera_Sergio_Mireya" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_unit/detection" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_unit/detection/unirect.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in /Users/mireepinki/code/AIVA-Madera_Sergio_Mireya/test_unit/detection/test_unirect.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_detection.TestDetection" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="AIVA-Madera_Sergio_Mireya" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -260,11 +242,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_unit/detection/test_unirect.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;test_detection.TestDetection&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in test_detection.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_preprocess.TestPreprocess" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="AIVA-Madera_Sergio_Mireya" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -275,17 +257,47 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_unit/detection/test_detection.py&quot;" />
+      <option name="_new_target" value="&quot;test_preprocess.TestPreprocess&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_preprocess.TestPreprocess.test_remove_black_background" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="AIVA-Madera_Sergio_Mireya" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_unit/detection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_preprocess.TestPreprocess.test_remove_black_background&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in test_preprocess.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="AIVA-Madera_Sergio_Mireya" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_unit/detection" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_unit/detection/test_preprocess.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests in test_preprocess.py" />
+        <item itemvalue="Python tests.Unittests for test_detection.TestDetection" />
         <item itemvalue="Python.detection2" />
-        <item itemvalue="Python.detection" />
-        <item itemvalue="Python tests.Unittests in test_detection.py" />
-        <item itemvalue="Python tests.Unittests in /Users/mireepinki/code/AIVA-Madera_Sergio_Mireya/test_unit/detection/test_unirect.py" />
-        <item itemvalue="Python.unirect" />
+        <item itemvalue="Python tests.Unittests for test_preprocess.TestPreprocess" />
+        <item itemvalue="Python tests.Unittests for test_preprocess.TestPreprocess.test_remove_black_background" />
       </list>
     </recent_temporary>
   </component>
@@ -303,6 +315,9 @@
       <workItem from="1549738951404" duration="14925000" />
       <workItem from="1550769006699" duration="59000" />
       <workItem from="1551983877574" duration="3540000" />
+      <workItem from="1552750499941" duration="4738000" />
+      <workItem from="1552930217281" duration="158000" />
+      <workItem from="1552930410263" duration="11783000" />
     </task>
     <task id="LOCAL-00001" summary="#2 Upload mock-up">
       <created>1550102410905</created>
@@ -311,53 +326,122 @@
       <option name="project" value="LOCAL" />
       <updated>1550102410905</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="#2 Update bug">
+      <created>1552752188902</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1552752188902</updated>
+    </task>
+    <task id="LOCAL-00003" summary="#2 Upload test">
+      <created>1552755164605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552755164605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#2 Resolved conflicts">
+      <created>1552931456267</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552931456267</updated>
+    </task>
+    <task id="LOCAL-00005" summary="#2 Update unit tests">
+      <created>1552945249834</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552945249834</updated>
+    </task>
+    <task id="LOCAL-00006" summary="#2 Update requirements.txt">
+      <created>1552945755413</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552945755413</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 18h 53m 00s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 26m 48s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 18h 53m 37s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 28m 08s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 18h 54m 01s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 28m 12s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 18h 58m 16s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 28m 20s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 18h 58m 52s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 28m 48s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 19h 02m 09s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 28m 49s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 19h 03m 58s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 30m 09s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 19h 07m 30s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_for_test_detection_TestDetection - 2019.03.18 at 20h 32m 27s.xml">
+      <configuration name="Unittests for test_detection.TestDetection" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_unirect_py - 2019.02.12 at 19h 11m 44s.xml">
-      <configuration name="Unittests in test_unirect.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_preprocess_py - 2019.03.18 at 20h 35m 43s.xml">
+      <configuration name="Unittests in test_preprocess.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_detection_py - 2019.02.14 at 00h 12m 40s.xml">
-      <configuration name="Unittests in test_detection.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_preprocess_py - 2019.03.18 at 20h 44m 17s.xml">
+      <configuration name="Unittests in test_preprocess.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19803000" />
+    <option name="totallyTimeSpent" value="36482000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="62" width="1400" height="783" extended-state="0" />
+    <frame x="1440" y="23" width="1920" height="980" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26067746" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19595315" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="SonarLint" weight="0.32995495" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32995495" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32995495" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39527026" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32995495" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32995495" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32995495" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.686901" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26435935" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3299566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,29 +457,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26067746" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28075254" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3299566" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,31 +464,57 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="#2 Upload mock-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="#2 Upload mock-up" />
+    <MESSAGE value="#2 Upldate bug" />
+    <MESSAGE value="#2 Update bug" />
+    <MESSAGE value="#2 Upload test" />
+    <MESSAGE value="#2 Resolved conflicts" />
+    <MESSAGE value="#2 Update unit tests" />
+    <MESSAGE value="#2 Update requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2 Update requirements.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/detection/mockup.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/detection/detection.py</url>
-          <line>59</line>
+          <line>160</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_unit/detection/test_preprocess.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/detection/detection.py</url>
-          <line>77</line>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>img_crop.shape</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>img_crop = self.preprocess.crop_image(img, self.rect, percentage_to_crop=0.15)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.preprocess.crop_image(img, self.rect, percentage_to_crop=0.15)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.preprocess.crop_image(img, self.rect, percentage_to_crop=0.15)
+        print('a')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>lower_red = np.array([0,0,255])
 upper_red = np.array([0,0,255])
@@ -438,165 +525,93 @@ mask0 = cv2.inRange(im, lower_red, upper_red)</expression-string>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>im[:,:,2] == 255</expression-string>
+        <expression-string>type(img_no_background)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>&amp; im[:,:,2] == 255</expression-string>
+        <expression-string>np.mean(img_no_background)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>im[:,:,0] == 0 &amp; im[:,:,1] == 0 &amp; im[:,:,2] == 255</expression-string>
+        <expression-string>np.mean</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>çim[:,:,0] == 0 &amp; im[:,:,1] == 0 &amp; im[:,:,2] == 255</expression-string>
+        <expression-string>img_no_background</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(im[:,:,0] == 0 &amp; im[:,:,1] == 0 &amp; im[:,:,2] == 255)</expression-string>
+        <expression-string>img_no_background[img_no_background == 70].shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.any(im[:,:,0] == 0 and im[:,:,1] == 0 and im[:,:,2] == 255)</expression-string>
+        <expression-string>img_no_background[img_no_background == 0].shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(im[:,:,0] == 0 and im[:,:,1] == 0 and im[:,:,2] == 255)</expression-string>
+        <expression-string>gray_crop == 0</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(im[:,:,1] == 0 and im[:,:,1] == 0 and im[:,:,2] == 255)</expression-string>
+        <expression-string>gray_crop.shape</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>np.sum(im[:,:,2] == 255)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>import numpy as np</expression-string>
+        <expression-string>gray_crop</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_unit/detection/unirect.py" />
-    <entry file="file://$PROJECT_DIR$/test_unit/detection/test_unirect.py" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
-            <caret line="6" selection-start-line="6" selection-end-line="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1013_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1014_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1015_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1017_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1020_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1029_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1036_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1042_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1047_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1053_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1055_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1072_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1075_split.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1156_split.jpg" />
     <entry file="file://$PROJECT_DIR$/src/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="1134" selection-start-line="1134" selection-end-line="1134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1012_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1024_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1013_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1092_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1014_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1093_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1015_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1128_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1017_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1189_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1020_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1286_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1029_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1389_split.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1036_split.jpg">
+    <entry file="file://$PROJECT_DIR$/src/detection/out/st1406_split.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1042_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1047_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1053_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1055_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1072_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1075_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/out/st1156_split.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_unit/detection/test_detection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -608,10 +623,128 @@ mask0 = cv2.inRange(im, lower_red, upper_red)</expression-string>
     <entry file="file://$PROJECT_DIR$/test_unit/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/data/st1456_gray_dilate.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/data/st1456_gray_erode.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1024_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1776_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1564_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1472_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1406_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1389_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1387_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1175_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1093_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1092_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1034_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1526_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/st1540_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/data/st1526_split.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/detection/test_mockup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/detection/test_detection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/mockup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_unit/detection/test_preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/detection/detection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+        <state relative-caret-position="510">
+          <caret line="150" column="83" selection-start-line="150" selection-start-column="42" selection-end-line="150" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="209">
+            <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="39" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detection/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
