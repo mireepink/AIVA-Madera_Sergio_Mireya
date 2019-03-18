@@ -146,7 +146,7 @@ class Detection:
         self._save_image(image_with_roi, path_im)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
     ap = argparse.ArgumentParser(description='Main parser')
     ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original')
     ap.add_argument('--path_out', default='out')

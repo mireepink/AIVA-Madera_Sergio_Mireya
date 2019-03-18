@@ -1,7 +1,7 @@
-import cv2
-import argparse
+import cv2 # pragma: no cover
+import argparse # pragma: no cover
 
-class Deteccion_Mockup():
+class Deteccion_Mockup(): # pragma: no cover
     def __init__(self):
         self.x = 387
         self.dx = 30
@@ -28,7 +28,7 @@ class Deteccion_Mockup():
         return im, bbox
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
     ap = argparse.ArgumentParser(description='Main parser')
     ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original/st1456')
     FLAGS = ap.parse_args()
