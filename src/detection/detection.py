@@ -4,7 +4,7 @@ import numpy as np
 import glob
 import os
 
-from preprocess import Preprocess
+from src.detection.preprocess import Preprocess
 
 class Detection:
     def __init__(self, path_out):
@@ -131,8 +131,8 @@ class Detection:
         img_gray = self.preprocess.convert_image_to_gray(img)
         img_gray[img_gray > threshold_gray] = 0
         image_erode = self.preprocess.morphology('erode', img_gray)
-        contours = self.preprocess.get_contours(image_erode)
-        img_crop, x_crop, y_crop = self.preprocess.crop_image(img, contours)
+        rect = self.preprocess.get_contours(image_erode)
+        img_crop, x_crop, y_crop = self.preprocess.crop_image(img, rect)
         gray_crop = self.preprocess.convert_image_to_gray(img_crop)
         gray_crop = self.preprocess.remove_black_background(gray_crop)
         edges = self.preprocess.canny_filter(gray_crop)
