@@ -12,51 +12,42 @@ class Preprocess():
     def __init__(self):
         pass
 
-    def remove_black_background(self, gray_crop):
+    def remove_black_background(self, gray_crop, threshold_black = 90):
         """
         Eliminacion de las franjas superiror e inferior de la imagen.
 
         :param gray_crop: imagen cortada
         :return: imagen cortada
         """
-        threshold_black = 90
-
         mean_color = np.mean(gray_crop)
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
-                if gray_crop[j][i] < threshold_black:
-                    gray_crop[j][i] = mean_color
-                else:
-                    gray_crop[j][i] = mean_color
+                gray_crop[j][i] = mean_color
+                if gray_crop[j][i] > threshold_black:
                     break
 
         for i in range(gray_crop.shape[1]):
             for j in range(gray_crop.shape[0]):
                 row_index = gray_crop.shape[0] - j - 1
                 col_index = gray_crop.shape[1] - i - 1
-                if gray_crop[row_index][col_index] < threshold_black:
-                    gray_crop[row_index][col_index] = mean_color
-                else:
-                    gray_crop[row_index][col_index] = mean_color
+                gray_crop[row_index][col_index] = mean_color
+                if gray_crop[row_index][col_index] > threshold_black:
                     break
 
         return gray_crop
 
-    def canny_filter(self, img):
+    def canny_filter(self, img, th_mean = 0.5, th_1 = 50, th_2 = 100):
         """
         Filtrado de canny para busqueda de bordes
 
         :param img: imagen
         :return: imagen de bordes
         """
-        th_mean = 0.5
-        th_1 = 50
-        th_2 = 100
         mean = np.mean(img)
         img[img > mean * th_mean] = 0
         return cv2.Canny(img, th_1, th_2)
 
-    def crop_image(self, img, contours):
+    def crop_image(self, img, rect, percentage_to_crop = 0.15):
         """
         Recorte de la imagen en funcion de los valors
         obtenidos anteriormente en la funcion get_contours
@@ -65,11 +56,7 @@ class Preprocess():
         :param contours: contornos
         :return: imagen cortada
         """
-
-        percentage_to_crop = 0.15
-
-        cnt = contours[0]
-        x, y, w, h = cv2.boundingRect(cnt)
+        x, y, w, h = rect
         y_crop = y + int(h * percentage_to_crop)
         x_crop = x + int(w * percentage_to_crop)
         return img[
@@ -77,20 +64,21 @@ class Preprocess():
                x + int(w * percentage_to_crop):x + w - int(w * percentage_to_crop)
                ], x_crop, y_crop
 
-    def get_contours(self, img):
+    def get_contours(self, img, threshold = 100, max_value = 150):
         """
         Obtencion de contornos
 
         :param img: imagen
         :return: lista de contornos
         """
-        threshold = 100
-        max_value = 150
         _, thresh = cv2.threshold(img, threshold, max_value, cv2.THRESH_BINARY)
-        return cv2.findContours(
+
+        contours = cv2.findContours(
             thresh,
             cv2.RETR_EXTERNAL,
             cv2.CHAIN_APPROX_SIMPLE)
+
+        return cv2.boundingRect(contours[0])
 
     def convert_image_to_gray(self, img):
         """
