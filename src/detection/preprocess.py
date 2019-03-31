@@ -12,7 +12,7 @@ class Preprocess():
     def __init__(self):
         pass
 
-    def remove_black_background(self, gray_crop, threshold_black=90):
+    def _remove_black_background(self, gray_crop, threshold_black=90):
         """
         Eliminacion de las franjas superiror e inferior de la imagen.
 
@@ -37,7 +37,7 @@ class Preprocess():
 
         return gray_crop
 
-    def canny_filter(self, img, th_mean=0.5, th_1=50, th_2=100):
+    def _canny_filter(self, img, th_mean=0.5, th_1=50, th_2=100):
         """
         Filtrado de canny para busqueda de bordes
 
@@ -51,7 +51,7 @@ class Preprocess():
         img[img > mean * th_mean] = 0
         return cv2.Canny(img, th_1, th_2)
 
-    def crop_image(self, img, rect, percentage_to_crop = 0.15):
+    def _crop_image(self, img, rect, percentage_to_crop = 0.15):
         """
         Recorte de la imagen en funcion de los valors
         obtenidos anteriormente en la funcion get_contours
@@ -69,7 +69,7 @@ class Preprocess():
                x + int(w * percentage_to_crop):x + w - int(w * percentage_to_crop)
                ], x_crop, y_crop
 
-    def get_contours(self, img, threshold=100, max_value=150):
+    def _get_contours(self, img, threshold=100, max_value=150):
         """
         Obtencion de contornos
 
@@ -87,7 +87,7 @@ class Preprocess():
 
         return cv2.boundingRect(contours[0])
 
-    def convert_image_to_gray(self, img):
+    def _convert_image_to_gray(self, img):
         """
         Metodo para convertir la imagen a escala de grises
 
@@ -98,7 +98,7 @@ class Preprocess():
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         return img_gray
 
-    def morphology(self, type_m, img_gray, kernel_size=3, iterations=1):
+    def _morphology(self, type_m, img_gray, kernel_size=3, iterations=1):
         """
         Operacion morfologica de erosion
 
@@ -113,3 +113,32 @@ class Preprocess():
             return cv2.erode(img_gray, kernel, iterations=iterations)
         elif type_m == 'dilate':
             return cv2.dilate(img_gray, kernel, iterations=iterations)
+
+    def preprocess_image(self, img):
+        """
+        Se recibe la imagen de entrada, se procesa mediante las diferentes tecnicas
+        :param img: 
+        :return: Se devuelve la imagen procesada, y la imagen recortada con sus coordenadas
+        """
+
+        threshold_gray = 200
+        crop_data = []
+
+        img_gray = self._convert_image_to_gray(img)
+        img_gray[img_gray > threshold_gray] = 0
+        image_erode = self._morphology('erode', img_gray)
+        rect = self._get_contours(image_erode)
+        img_crop, x_crop, y_crop = self._crop_image(img, rect)
+        gray_crop = self._convert_image_to_gray(img_crop)
+        gray_crop = self._remove_black_background(gray_crop)
+        edges = self._canny_filter(gray_crop)
+        img_dilated = self._morphology(
+                                                'dilate',
+                                                edges,
+                                                kernel_size=2,
+                                                iterations=3)
+        crop_data.append(img_crop)
+        crop_data.append(x_crop)
+        crop_data.append(y_crop)
+
+        return crop_data, img_dilated
