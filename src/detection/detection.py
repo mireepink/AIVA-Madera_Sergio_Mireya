@@ -4,7 +4,7 @@ import numpy as np
 import glob
 import os
 
-from src.detection.preprocess import Preprocess
+from preprocess import Preprocess
 
 
 class Detection:
@@ -126,22 +126,14 @@ class Detection:
 
         :param path_im: path de la imagen a procesar
         """
-        threshold_gray = 200
 
         img = self._load_im(path_im)
-        img_gray = self.preprocess.convert_image_to_gray(img)
-        img_gray[img_gray > threshold_gray] = 0
-        image_erode = self.preprocess.morphology('erode', img_gray)
-        rect = self.preprocess.get_contours(image_erode)
-        img_crop, x_crop, y_crop = self.preprocess.crop_image(img, rect)
-        gray_crop = self.preprocess.convert_image_to_gray(img_crop)
-        gray_crop = self.preprocess.remove_black_background(gray_crop)
-        edges = self.preprocess.canny_filter(gray_crop)
-        img_dilated = self.preprocess.morphology(
-                                                'dilate',
-                                                edges,
-                                                kernel_size=2,
-                                                iterations=3)
+        crop_data, img_dilated = self.preprocess.preprocess_image(img)
+
+        img_crop = crop_data[0]
+        x_crop = crop_data[1]
+        y_crop = crop_data[2]
+
         img_crop_line = self._apply_hough(img_crop, img_dilated)
         image_with_roi = self._select_roi(img_crop_line, img, x_crop, y_crop)
         self._save_image(image_with_roi, path_im)
@@ -149,8 +141,8 @@ class Detection:
 
 if __name__ == '__main__':  # pragma: no cover
     ap = argparse.ArgumentParser(description='Main parser')
-    ap.add_argument('--path_im', default='/Users/mireepinki/Downloads/wood/original')
-    ap.add_argument('--path_out', default='out')
+    ap.add_argument('--path_im', default='/INPUTS')
+    ap.add_argument('--path_out', default='/OUTPUTS')
     FLAGS = ap.parse_args()
 
     if not os.path.exists(FLAGS.path_out):
