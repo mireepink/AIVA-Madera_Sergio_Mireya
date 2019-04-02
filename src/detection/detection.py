@@ -4,7 +4,7 @@ import numpy as np
 import glob
 import os
 
-from preprocess import Preprocess
+from src.detection.preprocess import Preprocess
 
 
 class Detection:
