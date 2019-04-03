@@ -153,8 +153,10 @@ if __name__ == '__main__':  # pragma: no cover
     img_count = 1
 
     for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
+        print("Procesando imagen " + str(img_count) + " de " + total_img)
         detection = Detection(FLAGS.path_out)
         detection.process(filename)
+        img_count += 1
 
     total_img_split = str(len(glob.glob(os.path.join(FLAGS.path_out, '*'))))
     print("Encontradas " + total_img_split + " imagenes con grietas")
