@@ -42,7 +42,7 @@ Ejemplo: python src/detection/detection.py --path_im /Users/mireepinki/Downloads
 ```
 pytest --cov=src test_unit/*/test_*
 ```
-## Para ejecutarlo mediante docker:
+## Para ejecutarlo mediante DOCKER:
 ### Descargar nuestra imagen docker
 ```
 docker pull sergiodurjc/aiva_wood_group_2:latest
