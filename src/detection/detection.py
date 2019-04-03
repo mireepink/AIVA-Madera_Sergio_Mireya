@@ -148,6 +148,13 @@ if __name__ == '__main__':  # pragma: no cover
     if not os.path.exists(FLAGS.path_out):
         os.makedirs(FLAGS.path_out)
 
+    total_img = str(len(glob.glob(os.path.join(FLAGS.path_im, '*'))))
+    print("Encontradas " + total_img + " en el directorio")
+    img_count = 1
+
     for filename in glob.glob(os.path.join(FLAGS.path_im, '*')):
         detection = Detection(FLAGS.path_out)
         detection.process(filename)
+
+    total_img_split = str(len(glob.glob(os.path.join(FLAGS.path_out, '*'))))
+    print("Encontradas " + total_img_split + " imagenes con grietas")
