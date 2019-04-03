@@ -14,6 +14,7 @@ El desarrollo de este algoritmo tiene el objetivo de detectar grietas en la made
 
 Para poder ejecutarlo, son necesarios los siguientes pasos:
 
+## Para ejecutarlo en LOCAL:
 ### Preparar entorno
 ```
 git clone https://github.com/mireepink/AIVA-Madera_Sergio_Mireya.git
@@ -41,3 +42,13 @@ Ejemplo: python src/detection/detection.py --path_im /Users/mireepinki/Downloads
 ```
 pytest --cov=src test_unit/*/test_*
 ```
+## Para ejecutarlo mediante docker:
+### Descargar nuestra imagen docker
+```
+docker pull sergiodurjc/aiva_wood_group_2:latest
+```
+## Ejecutar el docker
+```
+docker run -v [directorio con las imágenes de entrada]:/INPUTS -v [directorio para las imágenes de salida]:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
+```
+Ejemplo: docker run -v /home/sergio/Descargas/wood/original:/INPUTS -v /home/sergio/Descargas/out_wood:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
