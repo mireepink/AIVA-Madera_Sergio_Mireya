@@ -47,7 +47,7 @@ pytest --cov=src test_unit/*/test_*
 ```
 docker pull sergiodurjc/aiva_wood_group_2:latest
 ```
-## Ejecutar el docker
+### Ejecutar el docker
 ```
 docker run --rm -v [directorio con las imágenes de entrada]:/INPUTS -v [directorio para las imágenes de salida]:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
 ```
