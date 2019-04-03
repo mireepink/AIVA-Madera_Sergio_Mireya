@@ -7,7 +7,7 @@ from src.detection.preprocess import Preprocess
 
 
 class TestPreprocess(TestCase):
-    def set_up(self):
+    def setUp(self):
         self.thresholdGray = 200
 
         self.path_im = os.path.join(
@@ -30,41 +30,41 @@ class TestPreprocess(TestCase):
     def test_convert_image_to_gray(self):
         img = cv2.imread(self.path_im)
         img_gray_expected = cv2.imread(self.path_im_gray, 0)
-        img_gray = self.preprocess.convert_image_to_gray(img)
+        img_gray = self.preprocess._convert_image_to_gray(img)
         self.assertTrue((img_gray_expected == img_gray).all(), True)
 
     def test_morpholofy(self):
         img_gray = cv2.imread(self.path_im_gray, 0)
         img_gray[img_gray > self.thresholdGray] = 0
         img_gray_erode_expected = cv2.imread(self.path_im_gray_erode, 0)
-        image_erode = self.preprocess.morphology('erode', img_gray)
+        image_erode = self.preprocess._morphology('erode', img_gray)
         self.assertTrue((img_gray_erode_expected == image_erode).all(), True)
         img_gray_dilate_expected = cv2.imread(self.path_im_gray_dilate, 0)
-        image_dilate = self.preprocess.morphology('dilate', img_gray)
+        image_dilate = self.preprocess._morphology('dilate', img_gray)
         self.assertTrue((img_gray_dilate_expected == image_dilate).all(), True)
 
     def test_get_contours(self):
         img_gray = cv2.imread(self.path_im_gray_erode, 0)
-        x, y, w, h = self.preprocess.get_contours(img_gray, threshold = 100, max_value = 150)
+        x, y, w, h = self.preprocess._get_contours(img_gray, threshold = 100, max_value = 150)
         self.assertEqual((x, y, w, h), self.rect)
 
     def test_crop_image(self):
         img = cv2.imread(self.path_im)
-        img_crop, x_crop, y_crop = self.preprocess.crop_image(img, self.rect, percentage_to_crop=0.15)
+        img_crop, x_crop, y_crop = self.preprocess._crop_image(img, self.rect, percentage_to_crop=0.15)
         self.assertEqual(img_crop.shape, self.shape_image_cropped)
         self.assertEqual(x_crop, 73)
         self.assertEqual(y_crop, 175)
 
     def test_canny_filter(self):
         img_gray_erode = cv2.imread(self.path_im_gray_erode, 0)
-        edges = self.preprocess.canny_filter(img_gray_erode, th_mean=0.5, th_1=50, th_2=100)
+        edges = self.preprocess._canny_filter(img_gray_erode, th_mean=0.5, th_1=50, th_2=100)
         self.assertEqual(edges[edges == 255].size, self.n_edges)
-        edges = self.preprocess.canny_filter(img_gray_erode, th_mean=0.4, th_1=55, th_2=102)
+        edges = self.preprocess._canny_filter(img_gray_erode, th_mean=0.4, th_1=55, th_2=102)
         self.assertNotEqual(edges[edges == 255].size, self.n_edges)
 
     def test_remove_black_background(self):
         img_gray = cv2.imread(self.path_im_gray_erode, 0)
-        img_no_background = self.preprocess.remove_black_background(img_gray, threshold_black=90)
+        img_no_background = self.preprocess._remove_black_background(img_gray, threshold_black=90)
         self.assertEqual(type(img_no_background), np.ndarray)
         self.assertEqual(np.mean(img_no_background), 61.0)
 
