@@ -49,6 +49,6 @@ docker pull sergiodurjc/aiva_wood_group_2:latest
 ```
 ## Ejecutar el docker
 ```
-docker run -v [directorio con las imágenes de entrada]:/INPUTS -v [directorio para las imágenes de salida]:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
+docker run --rm -v [directorio con las imágenes de entrada]:/INPUTS -v [directorio para las imágenes de salida]:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
 ```
-Ejemplo: docker run -v /home/sergio/Descargas/wood/original:/INPUTS -v /home/sergio/Descargas/out_wood:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
+Ejemplo: docker run --rm -v /home/sergio/Descargas/wood/original:/INPUTS -v /home/sergio/Descargas/out_wood:/OUTPUTS sergiodurjc/aiva_wood_group_2:latest
