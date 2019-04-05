@@ -56,18 +56,18 @@ Ejemplo: docker run --rm -v /home/sergio/Descargas/wood/original:/INPUTS -v /hom
 ### Pasos para generar localmente la imagen docker:
 Si quieres generarte la imagen docker a partir del código ya descargado puedes hacerlo con los siguientes pasos:
 Te creas un fichero que se llame Dockerfile (sin extensión), este fichero debe estar justo un nivel más arriba que la carpeta con el código del proyecto, y pegas en él las siguientes líneas:
-´´´
+````
 FROM python:3
 ADD ./AIVA-Madera_Sergio_Mireya /AIVA-Madera_Sergio_Mireya
 WORKDIR /AIVA-Madera_Sergio_Mireya
 RUN pip install -r requirements.txt
 ENV PYTHONPATH $PYTHONPATH: 'pwd'
 ENTRYPOINT ["python", "src/detection/detection.py"]
-´´´
+````
 Con estas líneas lo que estamos diciendo es que queremos crear una imagen docker que parta de una imagen docker de Python, en concreto la versión 3 de Python. Posteriormente añadimos la carpeta del código del proyecto a la imagen docker. Cambiamos el directorio de trabajo a la ruta del proyecto. Instalamos todas las dependencias de las librerías que tiene nuestro proyecto. Configuramos la variable de entorno de Python. Y por último, le decimos que queremos ejecutar dicho fichero Python.
 
 Una vez tenemos creado nuestro fichero Dockerfile, ejecutamos en ese directorio el siguiente comando:
-´´´
+``
 sudo docker build -t [nombre de la imagen] .
 ´´´
 Ejemplo: sudo docker build -t wood_docker .
