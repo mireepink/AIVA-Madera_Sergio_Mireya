@@ -62,9 +62,10 @@ ADD ./AIVA-Madera_Sergio_Mireya /AIVA-Madera_Sergio_Mireya
 WORKDIR /AIVA-Madera_Sergio_Mireya
 RUN pip install -r requirements.txt
 ENV PYTHONPATH $PYTHONPATH: 'pwd'
+RUN pytest --cov=src test_unit/*/test_*
 ENTRYPOINT ["python", "src/detection/detection.py"]
 ````
-Con estas líneas lo que estamos diciendo es que queremos crear una imagen docker que parta de una imagen docker de Python, en concreto la versión 3 de Python. Posteriormente añadimos la carpeta del código del proyecto a la imagen docker. Cambiamos el directorio de trabajo a la ruta del proyecto. Instalamos todas las dependencias de las librerías que tiene nuestro proyecto. Configuramos la variable de entorno de Python. Y por último, le decimos que queremos ejecutar dicho fichero Python.
+Con estas líneas lo que estamos diciendo es que queremos crear una imagen docker que parta de una imagen docker de Python, en concreto la versión 3 de Python. Posteriormente añadimos la carpeta del código del proyecto a la imagen docker. Cambiamos el directorio de trabajo a la ruta del proyecto. Instalamos todas las dependencias de las librerías que tiene nuestro proyecto. Configuramos la variable de entorno de Python. Ejecutamos los tests para comprobar que todo funciona correctamente. Y por último, le decimos que queremos ejecutar dicho fichero Python cuando el usuario ejecute la imagen.
 
 Una vez tenemos creado nuestro fichero Dockerfile, ejecutamos en ese directorio el siguiente comando:
 ```
