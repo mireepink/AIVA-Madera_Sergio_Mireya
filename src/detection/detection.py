@@ -32,10 +32,10 @@ class Detection:
         :return:
         """
         img_crop_return = img_crop.copy()
-        threshold = 100
+        threshold = 40
         lines = 1
-        min_line_length = 200
-        max_line_gap = 100
+        min_line_length = 100
+        max_line_gap = 20
 
         color_line_b = 0
         color_line_g = 0
